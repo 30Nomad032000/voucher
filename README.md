@@ -8,8 +8,6 @@ To start the development server run:
 bun run dev
 ```
 
-## title: API Documentation
-
 # API Documentation
 
 ## Introduction
