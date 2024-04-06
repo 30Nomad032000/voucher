@@ -10,6 +10,8 @@ import {
 import { Item, NewItem } from "./db/schema"
 import { swagger } from "@elysiajs/swagger"
 
+const port = process.env.PORT || 3000
+
 const app = new Elysia().use(swagger({ path: "/swagger" }))
 
 app.get("/", () => ({
@@ -71,7 +73,7 @@ app.get("/items/:name", ({ params: { name } }) => searchItems(name))
 
 app.use(swagger({ path: "/v2/swagger" }))
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log(
         `🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`
     )
