@@ -65,7 +65,7 @@ const itemRoutes = new Elysia({ prefix: "/item" })
                 minLength: 1,
                 error: "invalid item type",
             }),
-            cess: t.Nullable(t.String()).default(""),
+            cess: t.Nullable(t.String()),
         }),
     })
     .patch("/:id", ({ params: { id }, body }) => updateItem(id, body), {
@@ -125,7 +125,7 @@ const itemRoutes = new Elysia({ prefix: "/item" })
                 minLength: 1,
                 error: "invalid item type",
             }),
-            cess: t.Nullable(t.String()).default(""),
+            cess: t.Nullable(t.String()),
         }),
     })
     .delete("/:id", ({ params: { id } }) => deleteItem(id), {
