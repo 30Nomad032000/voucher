@@ -1,5 +1,5 @@
 {
-  "id": "3eeb8adf-e170-45b6-8bb0-07e376d36bb7",
+  "id": "32170aa1-eaeb-4cbd-8418-7e0366b6aa02",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "5",
   "dialect": "pg",
@@ -75,6 +75,12 @@
           "primaryKey": false,
           "notNull": false
         },
+        "sales_price_type": {
+          "name": "sales_price_type",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": false
+        },
         "opening_stock_price": {
           "name": "opening_stock_price",
           "type": "numeric(10, 2)",
@@ -83,6 +89,12 @@
         },
         "taxes": {
           "name": "taxes",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "cess": {
+          "name": "cess",
           "type": "varchar(100)",
           "primaryKey": false,
           "notNull": false

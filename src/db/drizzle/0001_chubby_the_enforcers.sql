@@ -1,1 +1,0 @@
-ALTER TABLE "items" ALTER COLUMN "sales_price" SET DATA TYPE varchar(50);
