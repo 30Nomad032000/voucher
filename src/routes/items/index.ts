@@ -19,14 +19,11 @@ const itemRoutes = new Elysia({ prefix: "/item" })
                 cans: "cans",
             }),
             category: t.Enum({
-                category1: "category1",
-                category2: "category2",
-                category3: "category3",
+                category1: "Category1",
+                category2: "Category2",
+                category3: "Category3",
             }),
-            price: t.String({
-                minLength: 1,
-                error: "invalid price",
-            }),
+
             discountPrice: t.String({
                 minLength: 1,
                 error: "invalid discount price",
@@ -68,9 +65,7 @@ const itemRoutes = new Elysia({ prefix: "/item" })
                 minLength: 1,
                 error: "invalid item type",
             }),
-            cess: t.String({
-                minLength: 0,
-            }),
+            cess: t.Nullable(t.String()).default(""),
         }),
     })
     .patch("/:id", ({ params: { id }, body }) => updateItem(id, body), {
@@ -85,13 +80,9 @@ const itemRoutes = new Elysia({ prefix: "/item" })
                 cans: "cans",
             }),
             category: t.Enum({
-                category1: "category1",
-                category2: "category2",
-                category3: "category3",
-            }),
-            price: t.String({
-                minLength: 1,
-                error: "invalid price",
+                category1: "Category1",
+                category2: "Category2",
+                category3: "Category3",
             }),
             discountPrice: t.String({
                 minLength: 1,
@@ -134,9 +125,7 @@ const itemRoutes = new Elysia({ prefix: "/item" })
                 minLength: 1,
                 error: "invalid item type",
             }),
-            cess: t.String({
-                minLength: 0,
-            }),
+            cess: t.Nullable(t.String()).default(""),
         }),
     })
     .delete("/:id", ({ params: { id } }) => deleteItem(id), {

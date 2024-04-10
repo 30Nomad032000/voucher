@@ -2,7 +2,6 @@ CREATE TABLE IF NOT EXISTS "items" (
 	"id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
 	"unit" varchar(50) NOT NULL,
 	"category" varchar(50) NOT NULL,
-	"price" numeric(10, 2),
 	"discount_price" numeric(10, 2),
 	"opening_stock" numeric(10, 2) NOT NULL,
 	"item_name" varchar(256) NOT NULL,

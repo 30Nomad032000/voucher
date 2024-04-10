@@ -11,7 +11,6 @@ export async function createItem(body: NewItem) {
             .values({
                 unit: body.unit,
                 category: body.category,
-                price: body.price,
                 discountPrice: body.discountPrice,
                 openingStock: body.openingStock,
                 itemName: body.itemName,
@@ -50,7 +49,6 @@ export async function updateItem(id: string, body: NewItem) {
             .set({
                 unit: body.unit,
                 category: body.category,
-                price: body.price,
                 discountPrice: body.discountPrice,
                 openingStock: body.openingStock,
                 itemName: body.itemName,

@@ -1,5 +1,5 @@
 {
-  "id": "32170aa1-eaeb-4cbd-8418-7e0366b6aa02",
+  "id": "4a19fddf-ae49-4fa0-80fd-77c722c954d0",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "5",
   "dialect": "pg",
@@ -26,12 +26,6 @@
           "type": "varchar(50)",
           "primaryKey": false,
           "notNull": true
-        },
-        "price": {
-          "name": "price",
-          "type": "numeric(10, 2)",
-          "primaryKey": false,
-          "notNull": false
         },
         "discount_price": {
           "name": "discount_price",

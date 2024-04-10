@@ -5,7 +5,6 @@ export const items = pgTable("items", {
     id: uuid("id").defaultRandom().primaryKey(),
     unit: varchar("unit", { length: 50 }).notNull(),
     category: varchar("category", { length: 50 }).notNull(),
-    price: decimal("price", { precision: 10, scale: 2 }),
     discountPrice: decimal("discount_price", { precision: 10, scale: 2 }),
     openingStock: decimal("opening_stock", {
         precision: 10,
