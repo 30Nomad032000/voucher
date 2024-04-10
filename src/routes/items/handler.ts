@@ -1,4 +1,4 @@
-import { count, eq } from "drizzle-orm"
+import { eq } from "drizzle-orm"
 import { db } from "../../db"
 import { items, NewItem, UpdateItem } from "../../db/schema"
 import { NotFoundError } from "elysia"
