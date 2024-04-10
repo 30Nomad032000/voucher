@@ -3,6 +3,7 @@ import { logger } from "@bogeychan/elysia-logger"
 import itemRoutes from "./routes/items"
 import { DbError } from "./exceptions/DbError"
 import { cors } from "@elysiajs/cors"
+import swagger from "@elysiajs/swagger"
 
 const port = process.env.PORT || 3000
 
@@ -12,6 +13,11 @@ new Elysia()
             origin: "*", // allow all origins
             methods: ["GET", "POST", "PUT", "DELETE"], // allow all methods
             allowedHeaders: ["Content-Type", "Authorization"], // allow all headers
+        })
+    )
+    .use(
+        swagger({
+            path: "/docs",
         })
     )
     .error({
