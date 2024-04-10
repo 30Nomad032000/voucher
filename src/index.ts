@@ -11,10 +11,14 @@ new Elysia()
         cors({
             origin: "*", // allow all origins
             methods: ["GET", "POST", "PUT", "DELETE"], // allow all methods
+            allowedHeaders: ["Content-Type", "Authorization"], // allow all headers
         })
     )
     .error({
         DbError,
+    })
+    .onError(({ code, error }) => {
+        if (code === "VALIDATION") return error.all
     })
     .group("", (app) => app.use(itemRoutes))
     .use(

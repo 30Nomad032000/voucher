@@ -9,7 +9,7 @@ import {
 
 const itemRoutes = new Elysia({ prefix: "/item" })
     .get("/", () => getAllItems)
-
+   
     .post("/", ({ body }) => createItem(body), {
         body: t.Object({
             unit: t.Enum({
@@ -26,46 +26,57 @@ const itemRoutes = new Elysia({ prefix: "/item" })
             price: t.String({
                 minLength: 1,
                 maxLength: 10,
+                error: "invalid price",
             }),
             discountPrice: t.String({
                 minLength: 1,
                 maxLength: 10,
+                error: "invalid discount price",
             }),
             openingStock: t.String({
                 minLength: 1,
                 maxLength: 10,
+                error: "invalid opening stock",
             }),
             itemName: t.String({
                 minLength: 1,
                 maxLength: 20,
+                error: "invalid item name",
             }),
             itemCode: t.String({
                 minLength: 1,
                 maxLength: 20,
+                error: "invalid item code",
             }),
             hsnCode: t.String({
                 minLength: 1,
                 maxLength: 20,
+                error: "invalid hsn code",
             }),
             salesPrice: t.Enum({
                 withTax: "with Tax",
                 withoutTax: "without Tax",
+                error: "invalid sales price",
             }),
             openingStockPrice: t.String({
                 minLength: 1,
                 maxLength: 10,
+                error: "invalid opening stock price",
             }),
             taxes: t.String({
                 minLength: 1,
                 maxLength: 10,
+                error: "invalid taxes",
             }),
             itemType: t.String({
                 minLength: 1,
                 maxLength: 10,
+                error: "invalid item type",
             }),
             cess: t.String({
                 minLength: 1,
                 maxLength: 10,
+                error: "invalid cess",
             }),
         }),
     })
@@ -81,53 +92,64 @@ const itemRoutes = new Elysia({ prefix: "/item" })
                 cans: "cans",
             }),
             category: t.Enum({
-                category1: "Category1",
-                category2: "Category2",
-                category3: "Category3",
+                category1: "category1",
+                category2: "category2",
+                category3: "category3",
             }),
             price: t.String({
                 minLength: 1,
                 maxLength: 10,
+                error: "invalid price",
             }),
             discountPrice: t.String({
                 minLength: 1,
                 maxLength: 10,
+                error: "invalid discount price",
             }),
             openingStock: t.String({
                 minLength: 1,
                 maxLength: 10,
+                error: "invalid opening stock",
             }),
             itemName: t.String({
                 minLength: 1,
                 maxLength: 20,
+                error: "invalid item name",
             }),
             itemCode: t.String({
                 minLength: 1,
                 maxLength: 20,
+                error: "invalid item code",
             }),
             hsnCode: t.String({
                 minLength: 1,
                 maxLength: 20,
+                error: "invalid hsn code",
             }),
             salesPrice: t.Enum({
                 withTax: "with Tax",
                 withoutTax: "without Tax",
+                error: "invalid sales price",
             }),
             openingStockPrice: t.String({
                 minLength: 1,
                 maxLength: 10,
+                error: "invalid opening stock price",
             }),
             taxes: t.String({
                 minLength: 1,
                 maxLength: 10,
+                error: "invalid taxes",
             }),
-            itemType: t.Enum({
-                product: "Product",
-                service: "Service",
+            itemType: t.String({
+                minLength: 1,
+                maxLength: 10,
+                error: "invalid item type",
             }),
             cess: t.String({
                 minLength: 1,
                 maxLength: 10,
+                error: "invalid cess",
             }),
         }),
     })

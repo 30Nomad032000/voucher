@@ -1,35 +1,5 @@
 import { InferInsertModel, InferSelectModel } from "drizzle-orm"
-import {
-    pgTable,
-    uuid,
-    varchar,
-    timestamp,
-    decimal,
-    pgEnum,
-} from "drizzle-orm/pg-core"
-
-// const itemTypeEnum = pgEnum("item_type", ["product", "service"]);
-// const unitEnum = pgEnum("unit", ["bags", "Nos", "Ltrs", "cans"]);
-// const categoryEnum = pgEnum("category", [
-//   "category1",
-//   "category2",
-//   "category2",
-// ])
-// const salesPriceEnum = pgEnum("sales_price", ["with tax", "without tax"]);
-// const taxEnum = pgEnum('tax', [
-//   "None - 0.0",
-//   "Exempted - 0.0",
-//   "GST @ 0%",
-//   "IGST @ 0%",
-//   "GST @ 5%",
-//   "IGST @5%",
-//   "GST  @ 12%",
-//   "IGST @ 12%",
-//   "GST @ 18%",
-//   "IGST @ 18%",
-//   "GST @ 28%",
-//   "IGST @ 28%",
-// ]);
+import { pgTable, uuid, varchar, timestamp, decimal } from "drizzle-orm/pg-core"
 
 export const items = pgTable("items", {
     id: uuid("id").defaultRandom().primaryKey(),
@@ -45,7 +15,8 @@ export const items = pgTable("items", {
     itemCode: varchar("item_code", { length: 50 }).notNull(),
     itemType: varchar("item_type", { length: 50 }).notNull(),
     hsnCode: varchar("hsn_code", { length: 50 }),
-    salesPrice: varchar("sales_price", { length: 50 }),
+    salesPrice: decimal("sales_price", { precision: 10, scale: 2 }),
+    salesPriceType: varchar("sales_price_type", { length: 50 }),
     openingStockPrice: decimal("opening_stock_price", {
         precision: 10,
         scale: 2,
