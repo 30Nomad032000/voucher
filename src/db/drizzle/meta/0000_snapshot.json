@@ -1,5 +1,5 @@
 {
-  "id": "12d106e2-aa41-4443-a476-fe730d5adc35",
+  "id": "4e4032d8-c5ec-419e-94bb-d2005477c548",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "5",
   "dialect": "pg",
@@ -10,22 +10,21 @@
       "columns": {
         "id": {
           "name": "id",
-          "type": "uuid",
+          "type": "serial",
           "primaryKey": true,
-          "notNull": true,
-          "default": "gen_random_uuid()"
+          "notNull": true
         },
         "unit": {
           "name": "unit",
-          "type": "varchar(50)",
+          "type": "unit",
           "primaryKey": false,
-          "notNull": true
+          "notNull": false
         },
         "category": {
           "name": "category",
-          "type": "varchar(50)",
+          "type": "category",
           "primaryKey": false,
-          "notNull": true
+          "notNull": false
         },
         "discount_price": {
           "name": "discount_price",
@@ -53,9 +52,9 @@
         },
         "item_type": {
           "name": "item_type",
-          "type": "varchar(50)",
+          "type": "itemType",
           "primaryKey": false,
-          "notNull": true
+          "notNull": false
         },
         "hsn_code": {
           "name": "hsn_code",
@@ -71,7 +70,7 @@
         },
         "sales_price_type": {
           "name": "sales_price_type",
-          "type": "varchar(50)",
+          "type": "salesPriceType",
           "primaryKey": false,
           "notNull": false
         },
@@ -83,7 +82,7 @@
         },
         "taxes": {
           "name": "taxes",
-          "type": "varchar(100)",
+          "type": "tax",
           "primaryKey": false,
           "notNull": false
         },
@@ -107,7 +106,56 @@
       "uniqueConstraints": {}
     }
   },
-  "enums": {},
+  "enums": {
+    "category": {
+      "name": "category",
+      "values": {
+        "Category1": "Category1",
+        "Category2": "Category2",
+        "Category3": "Category3"
+      }
+    },
+    "itemType": {
+      "name": "itemType",
+      "values": {
+        "Product": "Product",
+        "Service": "Service"
+      }
+    },
+    "salesPriceType": {
+      "name": "salesPriceType",
+      "values": {
+        "with Tax": "with Tax",
+        "without Tax": "without Tax"
+      }
+    },
+    "tax": {
+      "name": "tax",
+      "values": {
+        "None - 0.0": "None - 0.0",
+        "Exempted - 0.0": "Exempted - 0.0",
+        "GST @ 0%": "GST @ 0%",
+        "IGST @ 0%": "IGST @ 0%",
+        "GST @ 5%": "GST @ 5%",
+        "IGST @5%": "IGST @5%",
+        "GST  @ 12%": "GST  @ 12%",
+        "IGST @ 12%": "IGST @ 12%",
+        "GST @ 18%": "GST @ 18%",
+        "IGST @ 18%": "IGST @ 18%",
+        "GST @ 28%": "GST @ 28%",
+        "IGST @ 28%": "IGST @ 28%"
+      }
+    },
+    "unit": {
+      "name": "unit",
+      "values": {
+        "bags": "bags",
+        "Nos": "Nos",
+        "Ltrs": "Ltrs",
+        "cans": "cans"
+      }
+    }
+  },
   "schemas": {},
   "_meta": {
     "columns": {},
