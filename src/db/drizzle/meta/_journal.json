@@ -8,6 +8,20 @@
       "when": 1712424662194,
       "tag": "0000_oval_warbound",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1712747065179,
+      "tag": "0001_chubby_the_enforcers",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1712748539834,
+      "tag": "0002_bumpy_the_phantom",
+      "breakpoints": true
     }
   ]
 }

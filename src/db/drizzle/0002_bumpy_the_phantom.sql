@@ -1,0 +1,1 @@
+ALTER TABLE "items" ADD COLUMN "cess" varchar(100);
